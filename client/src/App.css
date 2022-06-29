@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.album-grid .card:hover {
+  background-color: #d1e2ff;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.card-ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

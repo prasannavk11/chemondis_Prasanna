@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Photos = () => {
   return (
-    <div style={{ margin: "2% auto", width: "80%" }}>
-      Photos
-    </div>
+    <section className="album-grid container">
+      <Link to="/"> Go home</Link>
+      <h1 className="my-4 text-center text-lg-left">Photos Gallery</h1>
+    </section>
   );
 };
 
