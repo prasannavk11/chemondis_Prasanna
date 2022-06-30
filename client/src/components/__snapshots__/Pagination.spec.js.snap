@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should render successfully 1`] = `
+<body>
+  <div>
+    <nav
+      aria-label="Page navigation example"
+    >
+      <ul
+        class="pagination justify-content-center"
+      >
+        <li
+          class="page-item cursor-pointer"
+        >
+          <div
+            class="page-link"
+          >
+            Previous
+          </div>
+        </li>
+        <li
+          class="page-item cursor-pointer"
+        >
+          <div
+            class="page-link"
+          >
+            Next
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</body>
+`;

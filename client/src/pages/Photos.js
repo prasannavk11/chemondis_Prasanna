@@ -77,7 +77,7 @@ const Photos = () => {
   return (
     <section className="album-grid container">
       <Link to="/"> Go home</Link>
-      <h1 className="my-4 text-center text-lg-left">{albumData.title}</h1>
+      <h1 className="my-4 text-center text-lg-left">{albumData && albumData.title}</h1>
       <h4 className="my-4 text-center text-lg-left">{userData}</h4>
       <PageSize
         sizes={[20, 30, 50]}

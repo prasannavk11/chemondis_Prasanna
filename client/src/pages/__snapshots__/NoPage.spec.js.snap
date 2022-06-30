@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoPage should render successfully 1`] = `
+<body>
+  <div>
+    <div
+      style="margin: 2% auto; width: 80%;"
+    >
+      <a
+        href="/"
+      >
+         Go home
+      </a>
+      <h1>
+        404
+      </h1>
+    </div>
+  </div>
+</body>
+`;

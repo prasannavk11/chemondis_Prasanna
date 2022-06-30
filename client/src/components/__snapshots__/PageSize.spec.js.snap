@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageSize should render successfully 1`] = `
+<body>
+  <div>
+    <nav
+      aria-label="Page navigation example"
+    >
+      <ul
+        class="pagination justify-content-end"
+      >
+        <li
+          class="page-item"
+        >
+          <div
+            class="page-link cursor-pointer"
+          >
+            20
+          </div>
+        </li>
+        <li
+          class="page-item"
+        >
+          <div
+            class="page-link cursor-pointer"
+          >
+            30
+          </div>
+        </li>
+        <li
+          class="page-item"
+        >
+          <div
+            class="page-link cursor-pointer"
+          >
+            50
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</body>
+`;

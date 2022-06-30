@@ -47,7 +47,7 @@ const Albums = () => {
   }, [albumPageNumber, albumPageSize]);
 
   useEffect(() => {
-    if (users.length === 0) {
+    if (users && users.length === 0) {
       fetchUsers();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

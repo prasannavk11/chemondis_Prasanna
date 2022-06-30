@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid should render successfully 1`] = `
+<body>
+  <div>
+    <div
+      class="col-lg-3 col-md-4 col-sm-6 col-xs-6 thumb"
+    >
+      <a
+        href="/album/1"
+        style="text-decoration: none;"
+      >
+        <div
+          class="card border-secondary mb-3"
+        >
+          <div
+            class="card-body text-secondary"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"
+          >
+            <h5
+              class="card-title text-capitalize card-ellipsis"
+              style="min-height: 5rem;"
+            >
+              test
+            </h5>
+            <p
+              class="card-text"
+            >
+              test
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+`;

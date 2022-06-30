@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Albums should render successfully 1`] = `
+<body>
+  <div>
+    <section
+      class="album-grid container"
+    >
+      <h1
+        class="my-4 text-center text-lg-left"
+      >
+        Albums
+      </h1>
+      <nav
+        aria-label="Page navigation example"
+      >
+        <ul
+          class="pagination justify-content-end"
+        >
+          <li
+            class="page-item disabled"
+          >
+            <div
+              class="page-link cursor-pointer"
+            >
+              20
+            </div>
+          </li>
+          <li
+            class="page-item disabled"
+          >
+            <div
+              class="page-link cursor-pointer"
+            >
+              30
+            </div>
+          </li>
+          <li
+            class="page-item disabled"
+          >
+            <div
+              class="page-link cursor-pointer"
+            >
+              50
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="row gallery"
+      >
+        <div
+          class="d-flex justify-content-center"
+        >
+          <div
+            class="spinner-border"
+            role="status"
+          />
+        </div>
+      </div>
+      <nav
+        aria-label="Page navigation example"
+      >
+        <ul
+          class="pagination justify-content-center"
+        >
+          <li
+            class="page-item disabled"
+          >
+            <div
+              class="page-link"
+            >
+              Previous
+            </div>
+          </li>
+          <li
+            class="page-item disabled"
+          >
+            <div
+              class="page-link"
+            >
+              Next
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </section>
+  </div>
+</body>
+`;
