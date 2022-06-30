@@ -15,7 +15,6 @@ setGlobal({
   photoList: [],
   albumPageNumber: 0,
   albumPageSize: 20,
-  totalAlbums: 100,
 });
 
 function App() {

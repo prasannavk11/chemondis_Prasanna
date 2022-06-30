@@ -4,6 +4,7 @@ import Grid from "../components/Grid";
 import Loading from "../components/Loading";
 import PageSize from "../components/PageSize";
 import Pagination from "../components/Pagination";
+import { getUserDetail } from "../shared/utils";
 
 const Albums = () => {
   const [users, setUsers] = useGlobal("userList");
@@ -11,7 +12,8 @@ const Albums = () => {
   const [albumPageNumber, setAlbumPageNumber] = useGlobal("albumPageNumber");
   const [albumPageSize, setAlbumPageSize] = useGlobal("albumPageSize");
   const [loading, setLoading] = useState(true);
-  const [totalAlbums] = useGlobal("totalAlbums");
+  const [noMoreData, setNoMoreData] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchAlbums = async () => {
     const responseJson = await getAlbums(
@@ -19,8 +21,13 @@ const Albums = () => {
       albumPageSize
     );
 
-    if (responseJson.length > 0) {
+    if (responseJson) {
+      if (responseJson.length === 0) {
+        setNoMoreData(true);
+      }
       setAlbums(responseJson);
+    } else {
+      setError(true);
     }
 
     setLoading(false);
@@ -28,12 +35,13 @@ const Albums = () => {
 
   const fetchUsers = async () => {
     const responseJson = await getUsers();
-
     setUsers(responseJson);
   };
 
   useEffect(() => {
     setLoading(true);
+    setNoMoreData(false);
+    setError(false);
     fetchAlbums();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [albumPageNumber, albumPageSize]);
@@ -44,11 +52,6 @@ const Albums = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const getUserDetail = (id) => {
-    const userDetails = users.find((user) => user.id === id);
-    return userDetails ? userDetails.name : "";
-  };
 
   const onChangePageSize = (e) => {
     const tmpPageSize = parseInt(e.target.textContent);
@@ -65,12 +68,12 @@ const Albums = () => {
 
   return (
     <section className="album-grid container">
-      <h1 className="my-4 text-center text-lg-left">Album Gallery</h1>
+      <h1 className="my-4 text-center text-lg-left">Albums</h1>
       <PageSize
         sizes={[20, 30, 50]}
         count={albumPageSize}
         onChangePageSize={(e) => onChangePageSize(e)}
-        disabled={loading}
+        disabled={loading || error}
       />
       <div className="row gallery">
         {loading ? (
@@ -80,19 +83,19 @@ const Albums = () => {
           albums.map((album, index) => {
             const tmpData = {
               ...album,
-              username: getUserDetail(album.userId),
+              username: getUserDetail(users, album.userId),
             };
             return <Grid key={index} type="album" data={tmpData} />;
           })
         )}
+        {noMoreData && "No more records found"}
+        {error && "Error while fetching data. Kindly reload."}
       </div>
       <Pagination
         pageNumber={albumPageNumber}
         onChangePageNumber={(e) => onChangePageNumber(e)}
-        disabled={loading}
-        noMoreData={
-          totalAlbums <= albumPageNumber * albumPageSize + albumPageSize
-        }
+        disabled={loading || error}
+        noMoreData={noMoreData || error}
       />
     </section>
   );
