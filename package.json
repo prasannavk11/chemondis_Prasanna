@@ -1,0 +1,17 @@
+{
+  "name": "chemondis-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:api": "cd ./api && npm start",
+    "dev:client": "cd ./client && npm start",
+    "start": "concurrently --kill-others-on-fail \"npm run dev:api\" \"npm run dev:client\""
+  },
+  "workspaces": [
+    "./api",
+    "./client"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.2.2"
+  }
+}
