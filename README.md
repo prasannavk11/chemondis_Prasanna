@@ -3,6 +3,7 @@
 The app has two folders
 
 api - node server for API end points
+
 client - React app
 
 ## Please note
